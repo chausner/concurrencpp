@@ -36,7 +36,13 @@ jobs:
             cxx: clang++-12
             tsan: NO
 
-          - name: Ubuntu 22.04 (GCC 12)
+          - name: Ubuntu 22.04 (GCC 12 - TSAN)
+            os: ubuntu-22.04
+            cc: gcc-12
+            cxx: g++-12
+            tsan: YES
+
+          - name: Ubuntu 22.04 (GCC 12 - no TSAN)
             os: ubuntu-22.04
             cc: gcc-12
             cxx: g++-12
