@@ -35,7 +35,7 @@ runs:
           Invoke-NativeCommand /bin/bash -c $(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)
           $env:CI = $null
           # install gcc
-          Invoke-NativeCommand /home/linuxbrew/.linuxbrew/bin/brew install gcc-${version}
+          Invoke-NativeCommand /home/linuxbrew/.linuxbrew/bin/brew install gcc@${version}
           Add-Content "${env:GITHUB_OUTPUT}" "gcc=$((Get-Command gcc-${version}).Source)"
           Add-Content "${env:GITHUB_OUTPUT}" "gplusplus=$((Get-Command g++-${version}).Source)"
         } elseif ($IsWindows) {
