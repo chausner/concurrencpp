@@ -36,10 +36,7 @@ runs:
           $env:CI = $null
           # install gcc
           Invoke-NativeCommand /home/linuxbrew/.linuxbrew/bin/brew install gcc@${version}
-          # update PATH, otherwise the newly installed gcc-13 binary won't be found
-          $env:Path = [Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [Environment]::GetEnvironmentVariable("Path", "User")
-          Test-Path /home/linuxbrew/.linuxbrew/bin/gcc-13
-          Add-Content "${env:GITHUB_OUTPUT}" "gcc=$((Get-Command gcc-${version}).Source)"
-          Add-Content "${env:GITHUB_OUTPUT}" "gplusplus=$((Get-Command g++-${version}).Source)"
+          Add-Content "${env:GITHUB_OUTPUT}" "gcc=/home/linuxbrew/.linuxbrew/bin/gcc-13"
+          Add-Content "${env:GITHUB_OUTPUT}" "gplusplus=/home/linuxbrew/.linuxbrew/bin/g++-13"
         } elseif ($IsWindows) {
         }
