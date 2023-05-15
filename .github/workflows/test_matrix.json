@@ -270,21 +270,21 @@
 		"stdlib": "libc++",
 		"tsan": false,
 		"shared": false,
-		"name" : "macos-12, libc++, shared=false, tsan=false"		
+		"name" : "macos-12, clang, libc++, shared=false, tsan=false"		
 	},
 	{
 		"os": "macos-12",
 		"stdlib": "libc++",
 		"tsan": false,
 		"shared": true,
-		"name" : "macos-12, libc++, shared=true, tsan=false"
+		"name" : "macos-12, clang, libc++, shared=true, tsan=false"
 	},
 	{
 		"os": "macos-12",
 		"stdlib": "libc++",
 		"tsan": true,
 		"shared": false,
-		"name" : "macos-12, libc++, shared=false, tsan=true"
+		"name" : "macos-12, clang, libc++, shared=false, tsan=true"
 	},
 	{
 		"os": "macos-12",
@@ -292,7 +292,7 @@
 		"stdlib": "libstdc++",
 		"tsan": false,
 		"shared": false,
-		"name" : "macos-12, libstdc++-13, shared=false, tsan=false"		
+		"name" : "macos-12, gcc-13, libstdc++-13, shared=false, tsan=false"		
 	},
 	{
 		"os": "macos-12",
@@ -300,7 +300,7 @@
 		"stdlib": "libstdc++",
 		"tsan": false,
 		"shared": true,
-		"name" : "macos-12, libstdc++-13, shared=true, tsan=false"
+		"name" : "macos-12, gcc-13, libstdc++-13, shared=true, tsan=false"
 	},
 	{
 		"os": "macos-12",
@@ -308,6 +308,6 @@
 		"stdlib": "libstdc++",
 		"tsan": true,
 		"shared": false,
-		"name" : "macos-12, libstdc++-13, shared=false, tsan=true"
+		"name" : "macos-12, gcc-13, libstdc++-13, shared=false, tsan=true"
 	}
 ]
