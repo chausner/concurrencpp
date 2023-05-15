@@ -29,6 +29,7 @@ runs:
           }
         }
         if ($IsMacOs) {
+          Write-Error "GCC installation on macOS is not supported"
         } elseif ($IsLinux) {
           # install Homebrew
           $env:CI = "1"
@@ -36,7 +37,8 @@ runs:
           $env:CI = $null
           # install gcc
           Invoke-NativeCommand /home/linuxbrew/.linuxbrew/bin/brew install gcc@${version}
-          Add-Content "${env:GITHUB_OUTPUT}" "gcc=/home/linuxbrew/.linuxbrew/bin/gcc-13"
-          Add-Content "${env:GITHUB_OUTPUT}" "gplusplus=/home/linuxbrew/.linuxbrew/bin/g++-13"
+          Add-Content "${env:GITHUB_OUTPUT}" "gcc=/home/linuxbrew/.linuxbrew/bin/gcc-${version}"
+          Add-Content "${env:GITHUB_OUTPUT}" "gplusplus=/home/linuxbrew/.linuxbrew/bin/g++-${version}"
         } elseif ($IsWindows) {
+          Write-Error "GCC installation on Windows is not supported"
         }
