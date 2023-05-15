@@ -30,9 +30,13 @@ runs:
         }
         if ($IsMacOs) {
         } elseif ($IsLinux) {
+          # install dependencies required for building gcc
+          Invoke-NativeCommand sudo apt-get update
+          Invoke-NativeCommand sudo apt-get install -y curl
           # install Homebrew
           $env:CI = "1"
-          Invoke-NativeCommand /bin/bash -c "`"`$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)`""
+          Invoke-NativeCommand curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+          #Invoke-NativeCommand /bin/bash -c "`"`$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)`""
           $env:CI = $null
           # install gcc
           Invoke-NativeCommand /home/linuxbrew/.linuxbrew/bin/brew install gcc-{version}
