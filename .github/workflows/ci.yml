@@ -90,7 +90,7 @@ jobs:
         uses: ./.github/actions/cmake-build
         continue-on-error: ${{ matrix.os == 'macos-11' }}
         env:
-          CXX: ${{ steps.clang.outputs.clangxx }}
+          CXX: ${{ steps.clang.outputs.clangxx || steps.gcc.outputs.gplusplus }}
         with:
           cmake: ${{ steps.cmake.outputs.cmake }}
           ninja: ${{ steps.ninja.outputs.ninja }}
@@ -106,7 +106,7 @@ jobs:
         uses: ./.github/actions/cmake-build
         continue-on-error: ${{ matrix.os == 'macos-11' }}
         env:
-          CXX: ${{ steps.clang.outputs.clangxx }}
+          CXX: ${{ steps.clang.outputs.clangxx || steps.gcc.outputs.gplusplus }}
         with:
           cmake: ${{ steps.cmake.outputs.cmake }}
           ninja: ${{ steps.ninja.outputs.ninja }}
