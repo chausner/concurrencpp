@@ -32,7 +32,7 @@ runs:
         } elseif ($IsLinux) {
           # install Homebrew
           $env:CI = "1"
-          Invoke-NativeCommand /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+          Invoke-NativeCommand /bin/bash -c "`"`$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)`""
           $env:CI = $null
           # install gcc
           Invoke-NativeCommand /home/linuxbrew/.linuxbrew/bin/brew install gcc-{version}
